@@ -28,6 +28,31 @@ resource nic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
         }
       }
     ]
+    networkSecurityGroup: {
+      id: nsg.id
+    }
+  }
+}
+
+resource nsg 'Microsoft.Network/networkSecurityGroups@2022-05-01' = {
+  name: '${vmName}-nsg'
+  location: location
+  properties: {
+    securityRules: [
+      {
+        name: 'Allow-RDP-From-167.0.0.0'
+        properties: {
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          destinationPortRange: '3389'
+          sourceAddressPrefix: '167.0.0.0/8'
+          destinationAddressPrefix: '*'
+          access: 'Allow'
+          priority: 100
+          direction: 'Inbound'
+        }
+      }
+    ]
   }
 }
 
@@ -51,7 +76,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = {
         version: 'latest'
       }
       osDisk: {
-        name: '${vmName}-osdisk'  // Set the OS disk name here
+        name: '${vmName}-osdisk'
         createOption: 'FromImage'
         managedDisk: {
           storageAccountType: 'StandardSSD_LRS'
