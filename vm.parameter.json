@@ -15,7 +15,7 @@
       "value": "eastus2"
     },
     "vnetResourceGroup": {
-      "value": "eastus2"
+      "value": "myvnet-rg"
     },
     "vnetName": {
       "value": "eastus2-vnet"
