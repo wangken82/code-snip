@@ -1,0 +1,27 @@
+{
+    "adminUsername": {
+      "value": "azureadmin"
+    },
+    "adminPassword": {
+      "value": "xx" 
+    },
+    "vmName": {
+      "value": "bicepvm"
+    },
+    "vmSize": {
+        "value": "Standard_D2s_v5"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "vnetResourceGroup": {
+      "value": "eastus2"
+    },
+    "vnetName": {
+      "value": "eastus2-vnet"
+    },
+    "subnetName": {
+        "value": "production"
+      }
+  }
+  
