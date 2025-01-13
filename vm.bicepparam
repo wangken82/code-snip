@@ -1,0 +1,10 @@
+using './vm.bicep'
+
+param vnetResourceGroup = 'eastus2-rg'
+param vnetName = 'eastus2-vnet'
+param vmName = 'bicepvm'
+param location = 'eastus2'
+param subnetName = 'production'
+param adminUsername = 'azureadmin'
+param adminPassword = 'Test12345678!'
+param vmSize = 'Standard_D2s_v5'
